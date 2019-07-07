@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Articles</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    Hi {{ user.username }}
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    You're not logged in
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+<h1>{{ page_title }}</h1>
+{% for article in object_list %}
+    <a href="{% url 'detail' article.id%}">{{ article.title }}</a>
+    <br>
+    {{ article.description }}
+    <hr>
+{% endfor %}
+</body>
+</html>

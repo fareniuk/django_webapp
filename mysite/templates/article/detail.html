@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+{{ article.title}}
+ <br>
+{{ article.description}}
+
+<a href="{% url 'update' article.id %}">Update</a>
+<a href="{% url 'delete' article.id %}">Delete</a>
+
+</body>
+</html>
